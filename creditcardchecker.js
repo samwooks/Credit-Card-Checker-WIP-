@@ -45,7 +45,6 @@ function validateCred(cardArray) {
   return result + item;
   }, 0);
   //console.log(sumEven);
-
   let sumTotal = sumOdd+sumEven;
   //console.log(sumTotal);
   if ((sumTotal%10)===0) {
@@ -57,10 +56,12 @@ function validateCred(cardArray) {
   }
 }
 
+// function to check card length
 function chkCardLength(card) {
   return card.length-1
 }
 
+// create odd array
 function oddArray(card, cardLength) {
   oddArr=[];
   for (let y = cardLength; y>=0; y-=2 ) {
@@ -70,6 +71,7 @@ function oddArray(card, cardLength) {
   return oddArr;  
 }
 
+// create even array
 function evenArray(card, cardLength) {
   evenArr=[];
   for (let z = cardLength-1; z>=0; z-=2 ) {
@@ -80,6 +82,7 @@ function evenArray(card, cardLength) {
   //return evenArr;
 }
 
+// re-computation of even array
 function computeEvenArr(evenArr) {
   let newCEvenArr = [];
   for (let i=0; i<evenArr.length; i++) {
@@ -94,6 +97,7 @@ function computeEvenArr(evenArr) {
   return newCEvenArr;
 }
 
+// function to combine even and odd numbers array to a singular nested array
 function combineEvenOdd(arrEven, arrOdd) {
   let combineArr = []
   for (let a=0; a<arrEven.length; a++) {
@@ -106,6 +110,7 @@ function combineEvenOdd(arrEven, arrOdd) {
   return combineArr;
 }
 
+// function to check for invalid cards
 function findInvalidCards(nestArr) {
   let invalidArr = [];
   for (let i=0; i<nestArr.length; i++) {
@@ -117,6 +122,7 @@ function findInvalidCards(nestArr) {
   return invalidArr;
 }
 
+// function to check credit card type, such as Visa, Mastercard, Amex or Discover
 function idInvalidCardCompanies(findcoy) {
     let invalidcoyArr = [];
   for (let i=0; i<findcoy.length; i++) {
